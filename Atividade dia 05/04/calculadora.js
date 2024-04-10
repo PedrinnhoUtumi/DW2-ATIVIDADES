@@ -91,6 +91,7 @@ function adicionaNumero(calculadora, numero) {
  * - copiar operandoAtual para o operandoAnterior, deixando a calculadora preparada para receber o próximo número
  */
 function escolheOperador(calculadora, operador) { 
+    calculadora.operandoAnterior = calculadora.operandoAtual 
     calculadora.operandoAtual = operador
     atualizaDisplay(calculadora)
 }
