@@ -40,14 +40,14 @@ btnIgual.addEventListener("click", () => {
 });
 
 // Botões dos números
-for (let btn of btnBotoes){
+for (let btn of btnBotoes) {
     btn.addEventListener("click", () => {
         adicionaNumero(calculadora, btn.innerText);
     });
 }
 
 // Botões dos operadores
-for (let btn of btnOperacoes){
+for (let btn of btnOperacoes) {
     btn.addEventListener("click", () => {
         escolheOperador(calculadora, btn.innerText);
     });
@@ -62,7 +62,7 @@ for (let btn of btnOperacoes){
  *  O elemento buffer é atulizado com o atributo operandoAnterior
  *  O elemento display é atualizado com o atributo operandoAtual
  */
-function atualizaDisplay(calculadora) { 
+function atualizaDisplay(calculadora) {
     calculadora.bufferTextoElemento.innerText = calculadora.operandoAnterior
     calculadora.displayTextoElemento.innerText = calculadora.operandoAtual
 }
@@ -82,7 +82,7 @@ function limpaVariaveis(calculadora) {
  * - Adiciona um dígito no atributo operandoAtual e atualiza o display
  * O dígito "." deve receber um tratamento especial
  */
-function adicionaNumero(calculadora, numero) { 
+function adicionaNumero(calculadora, numero) {
     calculadora.operandoAtual = calculadora.operandoAtual + numero
     atualizaDisplay(calculadora)
 }
@@ -95,9 +95,10 @@ function adicionaNumero(calculadora, numero) {
  * - armazenar o operador recebido por parâmetro no atributo operador do objeto calculadora.
  * - copiar operandoAtual para o operandoAnterior, deixando a calculadora preparada para receber o próximo número
  */
-function escolheOperador(calculadora, operador) { 
-    calculadora.operandoAnterior = calculadora.operandoAtual 
-    calculadora.operandoAtual = operador
+function escolheOperador(calculadora, operador) {
+    calculadora.operandoAnterior = calculadora.operandoAtual
+    calculadora.operandoAtual = ''
+    calculadora.operador = operador
     atualizaDisplay(calculadora)
 }
 
@@ -107,9 +108,40 @@ function escolheOperador(calculadora, operador) {
  * - Atualizar os atributos operador, operandoAnterior e operandoAtual
  * - Atualizar o display
  */
-function executaCalculo(calculadora) { }
+function executaCalculo(calculadora) {
+    if (calculadora.operador == '+') {
+        calc = parseFloat(calculadora.operandoAnterior) + parseFloat(calculadora.operandoAtual)
+        calculadora.operandoAtual = calc
+        calculadora.operandoAnterior = ''
+    } else if (calculadora.operador == '-') {
+        calc = parseFloat(calculadora.operandoAnterior) - parseFloat(calculadora.operandoAtual)
+        calculadora.operandoAtual = calc
+        calculadora.operandoAnterior = ''
+    } else if (calculadora.operador == '*') {
+        calc = calculadora.operandoAnterior * calculadora.operandoAtual
+        calculadora.operandoAtual = calc
+        calculadora.operandoAnterior = ''
+    } else if (calculadora.operador == '÷') {
+        if (calculadora.operandoAtual != "0") {
+            calc = calculadora.operandoAnterior / calculadora.operandoAtual
+            calculadora.operandoAtual = calc
+            calculadora.operandoAnterior = ''
+        } else {
+            alert("impossivel")
+            return;
+        }
+    } else {
+        alert("Impossivel")
+        return;
+    }
+    atualizaDisplay(calculadora)
+}
 
 /* Função chamada quando o botão delete for pressionado
  * Apaga o último dígito digitado no
  */
-function apagaDigito(calculadora) { }
+function apagaDigito(calculadora) {
+    let apaga = calculadora.operandoAtual.split(0, -1)
+    calculadora.operandoAtual = apaga
+    atualizaDisplay(calculadora)
+}
