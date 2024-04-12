@@ -141,7 +141,7 @@ function executaCalculo(calculadora) {
  * Apaga o último dígito digitado no
  */
 function apagaDigito(calculadora) {
-    let apaga = calculadora.operandoAtual.split(0, -1)
+    let apaga = calculadora.operandoAtual.slice(0, -1)
     calculadora.operandoAtual = apaga
     atualizaDisplay(calculadora)
 }
