@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--cor-do-fundo);
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+:root {
+    --cor-do-fundo: blueviolet;
+    --cor-da-div: white;
+    --cor-normal: black;
+}
+
+.container {
+    font-size: 12px;
+    background-color: var(--cor-da-div);
+    color: var(--cor-do-fundo);
+    display: flex;
+    height: 50vh;
+    width: 50vw;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.campos-container, .contador {
+    color: var(--cor-normal);
+}
+
+.contador {
+    padding: 10px;
+}
+
+#input {
+    border: 1px solid var(--cor-normal);
+    display: flex;
+    width: 40vw;
+    height: 20vh;
+    border-radius: 10px;
+}
+
+#btn-contar {
+    background-color: var(--cor-do-fundo);
+    border: none;
+    color: var(--cor-da-div);
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
