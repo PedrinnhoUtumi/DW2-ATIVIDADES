@@ -2,7 +2,10 @@ const inputTexto = document.querySelector("[input-texto]")
 const btnContar = document.querySelector("[btn-contar]")
 const divContador = document.querySelector("[txt-contador]")
 
+let texto = ""
 let tipoCont = "caracteres"
+let contador = 0
+let totalPalavra = ""
 
 function handleBtnContar(evento) {
     if (tipoCont == "palavras") {
@@ -15,12 +18,24 @@ function handleBtnContar(evento) {
 }
 
 function handleInputTexto(evento) { // Fazer outro
+    contar(evento)   
+    atualizarTela()
+}
+
+function contar(evento) {
+    texto = evento.target.value
+    if (tipoCont == "caracteres"){
+        contador = texto.length        
+    } else if (inputTexto.innerText == "") {
+        contador = texto.split(" ").length
+    }
+}
+
+function atualizarTela(){
     if (tipoCont == "palavras") {
-        evento.target.innerText = "Contar Caracteres"
-        tipoCont = "caracteres"
+        divContador.innerText = `${contador} palavras`
     } else {
-        evento.target.innerText = "Contar Palavras"
-        tipoCont = "palavras"
+        divContador.innerText = `${contador} caracteres`
     }
 }
 
