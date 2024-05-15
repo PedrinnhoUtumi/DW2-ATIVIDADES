@@ -17,6 +17,7 @@ function check_number() {
         return false
     }
 }
+
 //https://wa.me${variavel}
 function create_link(event) {
     if (event.target === criar || check_number()) {
