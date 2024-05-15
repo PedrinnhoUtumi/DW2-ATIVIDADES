@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerador de Link</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-Az0yTzCEV+SXc5R+X1PCQv11vR2S5WzEvXvtdGQz3ucwXUKgIuM2FGJdzyo+s5N1" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -15,18 +14,18 @@
         <div class="titulo">
             <h1>Gerador de Link <img src="imagens/whatsapp.svg" alt=""></h1>
         </div>
-        <form action="" class="forms">
+        <div class="forms">
             <br>
             <input type="text" name="numero" id="numero" placeholder="(44)99999-1234" required>
             <div class="botoes">
-                <button class="bt-icon"><i class="material-icons">attachment</i></button>
-                <button class="bt-icon"><i class="material-icons">favorite</i></button>
+                <button class="bt-icon" id="bt-icon"><i class="material-icons">attachment</i></button>
+                <button class="bt-icon" id="bt-icon2"><i class="material-icons">favorite</i></button>
             </div>
             <br>
-        </form>
-        <div class="link-copiar"></div>
+        </div>
         <br>
-        <span id="click" style="visibility: hidden;">Clique aqui para copiar o link</span>
+        <div class="copiar" id="copiar"></div>
+        <span id="click" style="visibility: hidden">Clique aqui para copiar o link</span>
     </div>
     <script src="script.js"></script>
 </body>
