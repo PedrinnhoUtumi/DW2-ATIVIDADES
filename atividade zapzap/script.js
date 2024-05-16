@@ -47,11 +47,6 @@ function create_link(event) {
         copia_div.style.display = "none"
         span_click.style.display = "none"
     }
-    return link_copiar
-}
-
-function change_page() {
-    window.location.href = copia_div.innerText
 }
 
 function copy(){
@@ -61,6 +56,8 @@ function copy(){
 
 number.addEventListener('input', check_number)
 criar.addEventListener('click', create_link)
-copia_div.addEventListener('click', copy)
 enviar.addEventListener('click', create_link)
-enviar.addEventListener('click', change_page)
+copia_div.addEventListener('click', copy)
+enviar.addEventListener('click', () => {
+    window.location.href = copia_div.innerText
+})
