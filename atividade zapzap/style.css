@@ -94,7 +94,8 @@ button {
 .copiar{
     border: 1px solid black;
     width: 31vw;
-    height: 2vh;
+    height: 3vh;
+    cursor: pointer;
     display: none
      
 }
