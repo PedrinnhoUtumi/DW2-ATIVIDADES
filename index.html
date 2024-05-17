@@ -9,7 +9,34 @@
 
 <body>
     <script>
-        let json1 = "{'nome': 'Joao', 'tell': '44999998888'}"
+        let json1 = "{'nome': 'Joao', 'tell': 44999998888}"
+        
+        let json2 = `{
+            'nome': 'Pedri', 
+            'tell': 44997078775
+        }`
+        
+        let contato1 = {nome: 'Çara', tell: 44998169169}
+        
+        let contato2 = {nome: 'libs', tell: 44324234324}
+        
+        contato1.nome = 'José'
+        contato1.cpf = '00000'
+        contato1["cpf"] = '0000'
+    
+        json1 = json1.replace("Joao","José")
+        
+        console.log(json1)
+        console.log(contato1)
+        
+        let contato = JSON.parse(json2)
+        console.log(contato)
+        
+        let texto = JSON.stringify(contato1)
+        console.log(texto)
+    
+    
+    
     </script>
 </body>
 
