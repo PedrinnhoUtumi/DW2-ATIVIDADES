@@ -6,7 +6,23 @@ const number = document.getElementById('numero')
 const span_click = document.getElementById('click')
 
 function check_number() {
-    if (regex.test(number.value)) {
+    let numeros = ""
+    for (let n of number.value) {
+        switch (n) {
+            case '(':
+                numeros.replace("")
+            case ')':
+                numeros.replace("")
+            case '-':
+                numeros.replace("")
+            case ' ':
+                numeros.replace("")
+                break;
+            default:
+                numeros += n;
+        }
+    }
+    if (regex.test(numeros)) {
         number.classList.add('correct')
         number.classList.remove('error')
         return true
@@ -23,16 +39,21 @@ function create_link() {
     for (let n of number.value) {
         switch (n) {
             case '(':
+                numeros.replace("")
             case ')':
+                numeros.replace("")
             case '-':
+                numeros.replace("")
             case ' ':
+                numeros.replace("")
                 break;
             default:
-                if (!isNaN(n)) {
-                    numeros += n;
-              }
+                numeros += n;
+              
         }
     }
+
+    
     if (check_number()) {
         const link_copiar = `https://wa.me/${numeros}`
         copia_div.style.display = "flex"
@@ -62,6 +83,7 @@ criar.addEventListener('click', create_link)
 enviar.addEventListener('click', create_link)
 copia_div.addEventListener('click', copy)
 enviar.addEventListener('click', () => {
+    console.log(copia_div.innerText)
     if (check_number()){
         window.open(copia_div.innerText);
     } else {
