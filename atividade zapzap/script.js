@@ -1,4 +1,3 @@
-const telefoneRegex = /^(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})$/;
 const other_Regex = /\d{11}/
 const criar = document.getElementById("bt-icon")
 const enviar = document.getElementById("bt-icon2")
@@ -6,15 +5,8 @@ const copia_div = document.getElementById("copiar")
 const number = document.getElementById('numero')
 const span_click = document.getElementById('click')
 
-number.addEventListener('input', () => {
-    const maxLength = 15;
-    if (number.value.length > maxLength) {
-        number.value = number.value.slice(0, maxLength);
-    }
-});
-
 function check_number() {
-    if (telefoneRegex.test(number.value) || other_Regex.test(number.value)) {
+    if (other_Regex.test(number.value)) {
         number.classList.add('correct')
         number.classList.remove('error')
         return true
@@ -25,7 +17,8 @@ function check_number() {
     }
 }
 
-function create_link(event) {
+
+function create_link() {
     let numeros = ""
     for (let n of number.value) {
         switch (n) {
@@ -38,11 +31,13 @@ function create_link(event) {
                 numeros += n;
         }
     }
-    const link_copiar = `https://wa.me/${numeros}`
-    if (event.target === criar || check_number()) {
+    if (check_number()) {
+        const link_copiar = `https://wa.me/${numeros}`
         copia_div.style.display = "flex"
         span_click.style.display = "flex"
         copia_div.innerText = link_copiar
+        let format = `(${numeros.substring(0, 2)}) ${numeros.substring(2, 7)}-${numeros.substring(7, 12)}`
+        number.value = format
     } else {
         copia_div.style.display = "none"
         span_click.style.display = "none"
@@ -51,13 +46,23 @@ function create_link(event) {
 
 function copy(){
     navigator.clipboard.writeText(copia_div.innerText)
-    span_click.innerText = "Texto copiado para área de transferência"
+    span_click.innerText = "Texto copiado para área de transferência"    
 }
 
 number.addEventListener('input', check_number)
+number.addEventListener('click', () => {
+    if (span_click.style.display == "flex" || copia_div.style.display == "flex"){
+        span_click.style.display = "none"
+        copia_div.style.display = "none"
+    }
+})
 criar.addEventListener('click', create_link)
 enviar.addEventListener('click', create_link)
 copia_div.addEventListener('click', copy)
 enviar.addEventListener('click', () => {
-    window.location.href = copia_div.innerText
+    if (check_number()){
+        window.open(copia_div.innerText, "_blank")
+    } else {
+        alert("digite um número válido")
+    }
 })
