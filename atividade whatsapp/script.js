@@ -1,4 +1,4 @@
-const other_Regex = /\d{11}/
+const regex = /\d{11}/
 const criar = document.getElementById("bt-icon")
 const enviar = document.getElementById("bt-icon2")
 const copia_div = document.getElementById("copiar")
@@ -6,7 +6,7 @@ const number = document.getElementById('numero')
 const span_click = document.getElementById('click')
 
 function check_number() {
-    if (other_Regex.test(number.value)) {
+    if (regex.test(number.value)) {
         number.classList.add('correct')
         number.classList.remove('error')
         return true
@@ -28,7 +28,9 @@ function create_link() {
             case ' ':
                 break;
             default:
-                numeros += n;
+                if (!isNaN(n)) {
+                    numeros += n;
+              }
         }
     }
     if (check_number()) {
@@ -61,8 +63,8 @@ enviar.addEventListener('click', create_link)
 copia_div.addEventListener('click', copy)
 enviar.addEventListener('click', () => {
     if (check_number()){
-        window.open(copia_div.innerText, "_blank")
+        window.open(copia_div.innerText);
     } else {
-        alert("digite um número válido")
+        alert("Digite um número válido");
     }
-})
+});
