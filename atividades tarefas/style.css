@@ -56,7 +56,7 @@ button {
 .tarefasLabel {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: space-between;
     width: 40%;
     position: absolute;
     top: 30%;
@@ -75,8 +75,9 @@ button {
 
 #img {
     position: absolute;
-    top: 50%;
+    top: 52%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
+
