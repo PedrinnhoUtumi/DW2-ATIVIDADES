@@ -16,7 +16,6 @@
 
 body {
     background-color: var(--cor-preto-claro);
-    
 }
 
 h1 {
@@ -36,12 +35,13 @@ form {
     justify-content: center;
 }
 
-input {
+#tarefa {
     padding: 1%;
     width: 40%;
     border-radius: 10px;
     background-color: var(--cor-cinza);
     color: var(--cor-branco);
+    
 }
 
 button {
@@ -73,10 +73,25 @@ button {
     color: var(--cor-roxo);
 }
 
-#img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
+#container{
+    width: 50%;
+    height: 20vh;
+    margin: 8% auto;
+}
+
+#tar {
+    color: var(--cor-branco);
+    background-color: var(--cor-cinza);
+    margin: 10%;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+div > img {
+    width: auto;
+    height: auto;
+    display: flex;
+    justify-content: end;
+    align-items: end;
 }
