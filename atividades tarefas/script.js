@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
         divTarefa.textContent = descricao;
         divTarefa.style.width = "100%"
         divTarefa.style.height = "10vh"
-        divTarefa.style.margin = "5%"
+        divTarefa.style.marginBottom = "5%"
         divTarefa.style.borderRadius = "10px"
         divTarefa.style.display = "flex"
         divTarefa.style.alignItems = "center"
