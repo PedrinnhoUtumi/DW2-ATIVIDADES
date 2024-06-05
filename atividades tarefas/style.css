@@ -73,7 +73,7 @@ button {
     color: var(--cor-roxo);
 }
 
-#img {
+#containerTarefas {
     position: absolute;
     top: 52%;
     left: 50%;
