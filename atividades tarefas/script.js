@@ -9,6 +9,7 @@ const botao = document.getElementById("criar");
 const containerTarefas = document.getElementById("containerTarefas");
 const img = document.getElementById("img")
 const tarcriada = document.getElementById("tarcriada")
+let lista = []
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -36,14 +37,18 @@ document.addEventListener("DOMContentLoaded", function() {
     botao.addEventListener("click", function(event) {
         event.preventDefault(); 
 
-        var descricao = input.value.trim(); 
+        let descricao = input.value.trim(); 
         if (descricao !== "") {
             adicionarTarefa(descricao);
-            input.value = ""; 
+            lista.push(descricao)
+            console.log(descricao)
+            console.log(tarcriada)
+            console.log(lista.length)
+            console.log(lista)
+            
+            tarcriada.innerText = `Tarefas criadas ${lista.length}`
         }
-        for (let i = 0; ; i++){
-             tarcriada.innerText = `Tarefas criadas ${i}`
-        }
+        
     });
 });
 
