@@ -4,11 +4,13 @@
 3: Colocar eles na div criada
 */
 
+const input = document.getElementById("tarefa");
+const botao = document.getElementById("criar");
+const containerTarefas = document.getElementById("containerTarefas");
+const img = document.getElementById("img")
+const tarcriada = document.getElementById("tarcriada")
+
 document.addEventListener("DOMContentLoaded", function() {
-    const input = document.getElementById("tarefa");
-    const botao = document.getElementById("criar");
-    const containerTarefas = document.getElementById("containerTarefas");
-    const img = document.getElementById("img")
 
     function criarDivTarefa(descricao) {
         img.remove()
@@ -39,5 +41,10 @@ document.addEventListener("DOMContentLoaded", function() {
             adicionarTarefa(descricao);
             input.value = ""; 
         }
+        for (let i = 0; ; i++){
+             tarcriada.innerText = `Tarefas criadas ${i}`
+        }
     });
 });
+
+
