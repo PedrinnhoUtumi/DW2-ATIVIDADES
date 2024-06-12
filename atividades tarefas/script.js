@@ -8,6 +8,7 @@ const input = document.getElementById("tarefa");
 const botao = document.getElementById("criar");
 const containerTarefas = document.getElementById("containerTarefas");
 const img = document.getElementById("img")
+const checkbox = document.getElementById("checkbox")
 const tarcriada = document.getElementById("tarcriada")
 const tarconcluida = document.getElementById("tarconcluida")
 
@@ -17,14 +18,12 @@ let listaconcluidas = []
 document.addEventListener("DOMContentLoaded", function() {
 
     function criarDivTarefa(descricao) {
-        let checkbox = document.createElement('input')
-        checkbox.type = "checkbox"
-        console.log(typeof(checkbox))
         let lixo = document.createElement('img')
         lixo.src = "hover=false, type=delete.png"
         img.remove()
         var divTarefa = document.createElement("div")
-        divTarefa.innerHTML = '<input type="checkbox">'
+        checkbox.style.visibility = "visible"
+        divTarefa.appendChild(checkbox) 
         divTarefa.textContent = descricao
         divTarefa.appendChild(lixo)
         divTarefa.style.width = "50vw"
@@ -62,19 +61,19 @@ document.addEventListener("DOMContentLoaded", function() {
             containerTarefas.appendChild(img)
         }
     })
-    containerTarefas.addEventListener("click", function(event){
-        if (divTarefa != ""){
-            let i = 0
-            i += 1
-            containerTarefas.style.cursor = "pointer"
-            containerTarefas.textContent = ""
-            containerTarefas.appendChild(img)
-            listaconcluidas.push(i)
-            tarconcluida.innerText = `Tarefas concluidas ${listaconcluidas.length}`
+    // containerTarefas.addEventListener("click", function(event){
+    //     if (divTarefa != ""){
+    //         let i = 0
+    //         i += 1
+    //         containerTarefas.style.cursor = "pointer"
+    //         containerTarefas.textContent = ""
+    //         containerTarefas.appendChild(img)
+    //         listaconcluidas.push(i)
+    //         tarconcluida.innerText = `Tarefas concluidas ${listaconcluidas.length}`
 
-        }
+    //     }
 
-    })
+    // })
 });
 
 
