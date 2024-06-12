@@ -9,24 +9,34 @@ const botao = document.getElementById("criar");
 const containerTarefas = document.getElementById("containerTarefas");
 const img = document.getElementById("img")
 const tarcriada = document.getElementById("tarcriada")
+const tarconcluida = document.getElementById("tarconcluida")
+
 let lista = []
+let listaconcluidas = []
 
 document.addEventListener("DOMContentLoaded", function() {
 
     function criarDivTarefa(descricao) {
+        let checkbox = document.createElement('input')
+        checkbox.type = "checkbox"
+        console.log(typeof(checkbox))
+        let lixo = document.createElement('img')
+        lixo.src = "hover=false, type=delete.png"
         img.remove()
-        var divTarefa = document.createElement("div");
-        divTarefa.textContent = descricao;
-        divTarefa.style.width = "100%"
+        var divTarefa = document.createElement("div")
+        divTarefa.innerHTML = '<input type="checkbox">'
+        divTarefa.textContent = descricao
+        divTarefa.appendChild(lixo)
+        divTarefa.style.width = "50vw"
         divTarefa.style.height = "10vh"
-        divTarefa.style.marginBottom = "5%"
+        divTarefa.style.marginBottom = "1%"
         divTarefa.style.borderRadius = "10px"
         divTarefa.style.display = "flex"
         divTarefa.style.alignItems = "center"
         divTarefa.style.justifyContent = "space-around"
         divTarefa.style.backgroundColor = "var(--cor-cinza)"
         divTarefa.style.color = "var(--cor-branco)"
-        return divTarefa;
+        return divTarefa
     }
 
     function adicionarTarefa(descricao) {
@@ -41,15 +51,30 @@ document.addEventListener("DOMContentLoaded", function() {
         if (descricao !== "") {
             adicionarTarefa(descricao);
             lista.push(descricao)
-            console.log(descricao)
-            console.log(tarcriada)
-            console.log(lista.length)
-            console.log(lista)
+
             
             tarcriada.innerText = `Tarefas criadas ${lista.length}`
         }
-        
+        input.value = ""
     });
+    document.addEventListener("click", function(event){
+        if (lista.length == 0) {
+            containerTarefas.appendChild(img)
+        }
+    })
+    containerTarefas.addEventListener("click", function(event){
+        if (divTarefa != ""){
+            let i = 0
+            i += 1
+            containerTarefas.style.cursor = "pointer"
+            containerTarefas.textContent = ""
+            containerTarefas.appendChild(img)
+            listaconcluidas.push(i)
+            tarconcluida.innerText = `Tarefas concluidas ${listaconcluidas.length}`
+
+        }
+
+    })
 });
 
 

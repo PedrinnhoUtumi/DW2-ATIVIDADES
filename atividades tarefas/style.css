@@ -75,9 +75,9 @@ button {
 
 #containerTarefas {
     position: absolute;
-    top: 54%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 35vh;
+    left: 50vw;
+    transform: translateX(-50%);
     text-align: center;
 }
 
