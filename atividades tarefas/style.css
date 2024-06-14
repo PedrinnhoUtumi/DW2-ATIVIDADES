@@ -1,0 +1,132 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+:root {
+    --cor-branco: #FFFFFF;
+    --cor-preto: #0D0D0D;
+    --cor-azul: #1E6F9F;
+    --cor-preto-claro: #1A1A1A;
+    --cor-cinza: #262626;
+    --cor-azul-claro: #4EA8DE;
+    --cor-roxo: #8284FA;
+}
+
+body {
+    background-color: var(--cor-preto-claro);
+    
+}
+
+h1 {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-preto);
+}
+
+form {
+    position: absolute;
+    top: 18%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+input {
+    padding: 1%;
+    width: 40%;
+    border-radius: 10px;
+    background-color: var(--cor-cinza);
+    color: var(--cor-branco);
+}
+
+button {
+    padding: 1%;
+    border-radius: 10px;
+    margin-left: 1%;
+    background-color: var(--cor-azul);
+    color: var(--cor-branco);
+    cursor: pointer;
+}
+
+.tarefasLabel {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#tarcriada {
+    color: var(--cor-azul-claro);
+}
+
+#tarconcluida {
+    color: var(--cor-roxo);
+}
+
+#containerTarefas {
+    position: absolute;
+    top: 35vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+@media (min-width: 1280px) {
+
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+    #containerTarefas {
+        position: absolute;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    #containerTarefas {
+        position: absolute;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+@media (min-width: 600px) and (max-width: 767px) {
+    #containerTarefas {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+@media (min-width: 480px) and (max-width: 599px) {
+    #containerTarefas {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    #containerTarefas {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+}
