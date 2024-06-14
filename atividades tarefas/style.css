@@ -73,11 +73,60 @@ button {
     color: var(--cor-roxo);
 }
 
-#img {
+#containerTarefas {
     position: absolute;
-    top: 52%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 35vh;
+    left: 50vw;
+    transform: translateX(-50%);
     text-align: center;
 }
 
+@media (min-width: 1280px) {
+
+}
+@media (min-width: 1024px) and (max-width: 1279px) {
+    #containerTarefas {
+        position: absolute;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+    #containerTarefas {
+        position: absolute;
+        top: 62%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+@media (min-width: 600px) and (max-width: 767px) {
+    #containerTarefas {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+@media (min-width: 480px) and (max-width: 599px) {
+    #containerTarefas {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
+@media (min-width: 320px) and (max-width: 479px) {
+    #containerTarefas {
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+
+}
