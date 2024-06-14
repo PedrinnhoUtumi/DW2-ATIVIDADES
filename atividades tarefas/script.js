@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 <input type="checkbox" id="check" name="check"> ${descricao}            
             </div>
         `
-        let check = document.getElementById("check")
+        let check = document.querySelector("#check")
         console.log(check)
         let lixo = document.createElement('img')
         lixo.src = "hover=false, type=delete.png"
