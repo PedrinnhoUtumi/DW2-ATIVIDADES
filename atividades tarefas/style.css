@@ -81,6 +81,26 @@ button {
     text-align: center;
 }
 
+#tar {
+    display: flex;
+    margin: 0%;
+    width: 10vw;
+    justify-content: space-between;
+}
+
+.divtarefa {
+    width: 50vw;
+    height: 10vh;
+    margin-bottom: 1%;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--cor-cinza);
+    color: var(--cor-branco)
+
+}
+
 @media (min-width: 1280px) {
 
 }
