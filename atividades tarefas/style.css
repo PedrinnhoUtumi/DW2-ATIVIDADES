@@ -71,6 +71,7 @@ button {
 
 #tarconcluida {
     color: var(--cor-roxo);
+    
 }
 
 #containerTarefas {
@@ -91,11 +92,12 @@ button {
 .divtarefa {
     width: 50vw;
     height: 10vh;
-    margin-bottom: 1%;
+    
+    margin: 1%;
     border-radius: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: var(--cor-cinza);
     color: var(--cor-branco)
 
