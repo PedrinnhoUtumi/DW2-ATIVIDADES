@@ -7,7 +7,6 @@ const tarconcluida = document.getElementById("tarconcluida")
 
 let lista = []
 let listaconcluidas = []
-let object = {}
 
 function criarDivTarefa(descricao) {
     let divTarefa = document.createElement("div")
@@ -18,7 +17,6 @@ function criarDivTarefa(descricao) {
             </div>
         `
     let check = divTarefa.querySelector("#check")
-    console.log(check)
     check.addEventListener("change", function () {
         if (check.checked) {
             listaconcluidas.push(descricao)
@@ -28,7 +26,7 @@ function criarDivTarefa(descricao) {
             tarcriada.innerText = `Tarefas criadas ${lista.length}`
         } else {
             lista.push(descricao)
-            console.log(lista.length)
+            
             listaconcluidas.pop()
             divTarefa.style.textDecoration = "none"
             tarconcluida.innerText = `Tarefas concluídas ${listaconcluidas.length}`
@@ -43,13 +41,11 @@ function criarDivTarefa(descricao) {
             divTarefa.remove()
             listaconcluidas.pop()
             tarconcluida.innerText = `Tarefas concluídas ${listaconcluidas.length}`
-            console.log("sdadadasdsadsa")
             verificarImagem()
         } else {
             divTarefa.remove()
             lista.pop()
             tarcriada.innerText = `Tarefas criadas ${lista.length}`
-            console.log("sdadadasdsadsa")
             verificarImagem()
         }
     })
@@ -76,10 +72,14 @@ botao.addEventListener("click", function (event) {
 
 function verificarImagem() {
     if (lista.length === 0 && listaconcluidas.length === 0) {
-        containerTarefas.appendChild(img);
+        containerTarefas.appendChild(img)
     } else {
         if (img.parentNode) {
-            img.parentNode.removeChild(img);
+            img.parentNode.removeChild(img)
         }
     }
 }
+
+botao.addEventListener("click", function send_to_localStorage() {
+    localStorage.setItem('itens', JSON.stringify(lista))
+})
